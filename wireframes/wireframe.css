@@ -1,0 +1,56 @@
+/* WIREFRAME ONLY — no brand styling, just structure/spacing for layout review */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Courier New", monospace;
+  color: #333;
+  background: #f4f4f4;
+}
+.block {
+  border: 1px solid #999;
+  background: #fff;
+  padding: 16px;
+  margin: 0;
+}
+.label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #999;
+  margin-bottom: 6px;
+}
+.img-placeholder {
+  border: 1px dashed #aaa;
+  background: repeating-linear-gradient(45deg, #eee, #eee 10px, #f7f7f7 10px, #f7f7f7 20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  font-size: 12px;
+  min-height: 120px;
+}
+nav.wf-nav {
+  display: flex;
+  gap: 20px;
+  padding: 14px 24px;
+  border-bottom: 1px solid #999;
+  background: #fff;
+}
+nav.wf-nav a {
+  color: #333;
+  text-decoration: none;
+  font-size: 13px;
+}
+nav.wf-nav a.active { font-weight: bold; text-decoration: underline; }
+main {
+  max-width: 960px;
+  margin: 24px auto;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.row { display: flex; gap: 16px; }
+.row > .block { flex: 1; }
+h1, h2, h3, p { margin: 0 0 8px 0; }
+.tbd { color: #c00; font-weight: bold; }

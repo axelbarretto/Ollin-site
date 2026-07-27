@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Ollin</title>
+<meta name="description" content="Get in touch with Ollin — send a message or book time directly.">
+<meta property="og:title" content="Contact — Ollin">
+<meta property="og:description" content="Send a message or book time directly.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Space+Mono:wght@400;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html" class="brand">Ollin</a>
+  <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
+  <ul id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" aria-current="page">Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section class="hero container">
+    <p class="eyebrow reveal reveal-1">Get in touch</p>
+    <h1 class="reveal reveal-2">Contact</h1>
+    <p class="reveal reveal-3">Tell me what's not working, or book time and we'll talk it through directly.</p>
+  </section>
+
+  <section class="section container">
+    <h2>Send a message</h2>
+    <form class="contact-form" action="https://formspree.io/f/FORM_ENDPOINT_HERE" method="POST">
+      <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div>
+        <label for="business">Business</label>
+        <input type="text" id="business" name="business">
+      </div>
+      <div>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <button class="btn" type="submit">Send message</button>
+    </form>
+    <p class="illustrative-disclaimer">I read every message personally and respond within 24 hours.</p>
+  </section>
+
+  <section class="section container">
+    <h2>Or book time directly</h2>
+    <div id="calendlyWidget" class="calendly-inline-widget" data-url="https://calendly.com/CALENDLY_URL_HERE" style="min-width:280px;height:600px;"></div>
+    <p id="calendlyFallback" class="calendly-fallback" hidden>
+      Booking widget didn't load — <a href="https://calendly.com/CALENDLY_URL_HERE">book a time here instead</a>.
+    </p>
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <span>Ollin — Digital Marketing</span>
+  <a href="mailto:axel.barrettorodriguez@gmail.com">axel.barrettorodriguez@gmail.com</a>
+  <span>© 2026 Ollin</span>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

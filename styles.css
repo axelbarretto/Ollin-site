@@ -196,16 +196,32 @@ form.contact-form textarea { min-height: 120px; resize: vertical; }
 .process-step {
   display: flex;
   flex-direction: column;
-  gap: var(--space-1);
   background-color: var(--color-card);
   border-radius: 16px;
-  padding: var(--space-3);
   box-shadow: 0 12px 24px rgba(0,0,0,0.35);
+  overflow: hidden;
+}
+
+/* Placeholder graphic area — sized and positioned so a real <img> (stock
+   photo, Canva export, etc.) can drop in later without restructuring
+   anything else. */
+.process-image {
+  height: 260px;
+  background: linear-gradient(160deg, rgba(232,201,138,0.2), rgba(0,0,0,0.2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.process-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-3);
 }
 
 .process-grid.is-slider {
   display: block;
-  min-height: 230px;
+  min-height: 460px;
   position: relative;
 }
 .process-grid.is-slider .process-step { display: none; opacity: 0; }
@@ -218,6 +234,7 @@ form.contact-form textarea { min-height: 120px; resize: vertical; }
 .slider-controls {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: var(--space-2);
   margin-top: var(--space-3);
 }
@@ -246,15 +263,14 @@ form.contact-form textarea { min-height: 120px; resize: vertical; }
 }
 .slider-dot.active { background-color: var(--color-gold); }
 .process-icon {
-  width: 32px;
-  height: 32px;
+  width: 64px;
+  height: 64px;
   stroke: var(--color-gold);
   fill: none;
-  stroke-width: 1.5;
-  margin-bottom: var(--space-1);
+  stroke-width: 1.2;
 }
-.process-step h3 { font-size: 1rem; }
-.process-step p { font-size: 0.9rem; color: rgba(242,228,200,0.85); }
+.process-step h3 { font-size: 1.1rem; }
+.process-step p { font-size: 0.95rem; color: rgba(242,228,200,0.85); }
 
 .service-block { padding: var(--space-5) var(--space-3); }
 .service-block:nth-of-type(even) { background-color: rgba(0,0,0,0.12); }

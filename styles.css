@@ -296,6 +296,30 @@ form.contact-form textarea { min-height: 120px; resize: vertical; }
 
 .section-title { font-size: clamp(2rem, 4.5vw, 3rem); }
 
+.cta-banner {
+  background-color: var(--color-card);
+  border-radius: 24px;
+  padding: var(--space-5);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+.cta-banner-title {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  margin-bottom: var(--space-1);
+}
+.cta-banner-text p {
+  margin: 0;
+  color: rgba(242,228,200,0.85);
+}
+.cta-banner-btn { white-space: nowrap; }
+@media (max-width: 640px) {
+  .cta-banner { flex-direction: column; align-items: flex-start; }
+}
+
 .footer-links {
   border-top: 1px solid rgba(232,201,138,0.15);
   padding: var(--space-5) 0;

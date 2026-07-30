@@ -192,6 +192,49 @@ form.contact-form textarea { min-height: 120px; resize: vertical; }
   margin-top: var(--space-3);
 }
 .process-step { display: flex; flex-direction: column; gap: var(--space-1); }
+
+.process-grid.is-slider {
+  display: block;
+  min-height: 190px;
+  position: relative;
+}
+.process-grid.is-slider .process-step { display: none; opacity: 0; }
+.process-grid.is-slider .process-step.active {
+  display: flex;
+  opacity: 1;
+  animation: reveal-up 0.5s ease-out;
+}
+
+.slider-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+.slider-arrow {
+  background: none;
+  border: 1px solid rgba(232,201,138,0.3);
+  color: var(--color-gold);
+  font-family: var(--font-label);
+  font-size: 0.9rem;
+  padding: 6px 14px;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: border-color 0.2s ease;
+}
+.slider-arrow:hover { border-color: var(--color-gold); }
+.slider-dots { display: flex; gap: 8px; }
+.slider-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(232,201,138,0.3);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 0.2s ease;
+}
+.slider-dot.active { background-color: var(--color-gold); }
 .process-icon {
   width: 32px;
   height: 32px;

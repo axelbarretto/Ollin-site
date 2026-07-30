@@ -313,6 +313,20 @@ section.hero.bg-sun-sweep > .container {
   z-index: 2;
 }
 
+/* Static (non-animated) fade so the section boundary below the hero is
+   never a hard line, whatever the animated ember/sun layers are doing
+   underneath. Zero performance cost — it never moves. */
+.hero-fade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 30%;
+  background: linear-gradient(to bottom, transparent, var(--color-stone));
+  pointer-events: none;
+  z-index: 3;
+}
+
 /* Simplified for performance: transform + opacity only, no mix-blend-mode
    or mask-image (both force extra per-frame compositor work). The seam
    issue is solved by simply keeping both effects clear of the hero's

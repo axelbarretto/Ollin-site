@@ -273,8 +273,26 @@ form.contact-form textarea { min-height: 120px; resize: vertical; }
 .process-step p { font-size: 0.95rem; color: rgba(242,228,200,0.85); }
 
 .service-block { padding: var(--space-5) var(--space-3); }
-.service-block:nth-of-type(even) { background-color: rgba(0,0,0,0.12); }
+.service-block--shade { background-color: rgba(0,0,0,0.12); }
 .service-block .eyebrow { margin-bottom: var(--space-1); }
+
+.service-block-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: var(--space-4);
+  align-items: center;
+}
+.service-block-image {
+  min-height: 280px;
+  border-radius: 16px;
+  background: linear-gradient(160deg, rgba(232,201,138,0.2), rgba(0,0,0,0.2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 768px) {
+  .service-block-grid { grid-template-columns: 1fr; }
+}
 
 .final-grid {
   display: grid;

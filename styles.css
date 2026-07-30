@@ -296,6 +296,61 @@ form.contact-form textarea { min-height: 120px; resize: vertical; }
 
 .section-title { font-size: clamp(2rem, 4.5vw, 3rem); }
 
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+.problem-card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  background-color: var(--color-card);
+  border-radius: 12px;
+  padding: var(--space-3);
+}
+.problem-x {
+  color: var(--color-oxblood);
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 1.3;
+  flex-shrink: 0;
+}
+.problem-card p { margin: 0; font-size: 0.95rem; }
+
+.problem-banner {
+  margin-top: var(--space-3);
+  background: linear-gradient(120deg, var(--color-ink), var(--color-oxblood));
+  border-radius: 16px;
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+.problem-banner p {
+  margin: 0;
+  color: var(--color-cream);
+  font-weight: 600;
+  font-size: 1.05rem;
+  max-width: none;
+}
+.problem-banner-btn {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  white-space: nowrap;
+}
+.problem-banner-btn:hover { background-color: #fff; }
+
+@media (max-width: 768px) {
+  .problem-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .problem-banner { flex-direction: column; align-items: flex-start; }
+}
+
 .cta-banner {
   background-color: var(--color-card);
   border-radius: 24px;

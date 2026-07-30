@@ -363,6 +363,9 @@ section.hero.bg-sun-sweep::after {
   section.hero.bg-sun-sweep::after { animation: sun-sweep 24s ease-in-out infinite; }
 }
 @keyframes sun-sweep {
-  0%, 100% { transform: translate3d(-6%, -3%, 0); opacity: 0.3; }
-  50% { transform: translate3d(6%, 3%, 0); opacity: 0.75; }
+  0%   { transform: translate3d(-6%, -3%, 0); opacity: 0; }
+  20%  { opacity: 0.75; }
+  50%  { transform: translate3d(6%, 3%, 0); opacity: 0.75; }
+  80%  { opacity: 0.75; }
+  100% { transform: translate3d(-6%, -3%, 0); opacity: 0; }
 }

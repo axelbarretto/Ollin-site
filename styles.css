@@ -272,7 +272,7 @@ form.contact-form textarea { min-height: 120px; resize: vertical; }
 .process-step h3 { font-size: 1.1rem; }
 .process-step p { font-size: 0.95rem; color: rgba(242,228,200,0.85); }
 
-.service-block { padding: var(--space-5) var(--space-3); }
+.service-block { padding: var(--space-5) 0; }
 .service-block--shade { background-color: rgba(0,0,0,0.12); }
 .service-block .eyebrow { margin-bottom: var(--space-1); }
 

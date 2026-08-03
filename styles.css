@@ -235,12 +235,15 @@ form.contact-form textarea { min-height: 120px; resize: vertical; }
    photo, Canva export, etc.) can drop in later without restructuring
    anything else. */
 .process-image {
-  height: 260px;
-  background: linear-gradient(160deg, rgba(201,161,90,0.2), rgba(0,0,0,0.2));
+  height: 320px;
+  background-color: #f5f2ea;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+.process-image--build .build-scene { stroke: var(--color-ink); }
+.process-image--build .build-scene circle[fill="currentColor"],
+.process-image--build .build-scene path[fill="currentColor"] { fill: var(--color-ink); }
 .process-content {
   display: flex;
   flex-direction: column;
@@ -298,9 +301,9 @@ form.contact-form textarea { min-height: 120px; resize: vertical; }
   fill: none;
   stroke-width: 1.2;
 }
-.process-image--build { padding: var(--space-2); }
-.process-step h3 { font-size: 1.1rem; }
-.process-step p { font-size: 0.95rem; color: rgba(236,231,217,0.85); }
+.process-image--build { padding: var(--space-1); }
+.process-step h3 { font-size: 1.6rem; }
+.process-step p { font-size: 1.15rem; color: rgba(236,231,217,0.85); }
 
 /* Small looping animations on the Services icons — transform/opacity only,
    disabled entirely for reduced-motion users. */
@@ -439,6 +442,16 @@ form.contact-form textarea { min-height: 120px; resize: vertical; }
   0% { transform: scale(0.6); opacity: 0.8; }
   100% { transform: scale(1.7); opacity: 0; }
 }
+.call-dot { transform-origin: center; }
+@media (prefers-reduced-motion: no-preference) {
+  .call-dot-1 { animation: call-dot-bounce 1.2s ease-in-out infinite; }
+  .call-dot-2 { animation: call-dot-bounce 1.2s ease-in-out infinite; animation-delay: 0.15s; }
+  .call-dot-3 { animation: call-dot-bounce 1.2s ease-in-out infinite; animation-delay: 0.3s; }
+}
+@keyframes call-dot-bounce {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.5; }
+  30% { transform: translateY(-4px); opacity: 1; }
+}
 
 /* The audit: magnifying glass scans down past each checklist row */
 .audit-glass { transform: translate(255px, 55px); transform-origin: 0 0; stroke-width: 2; }
@@ -452,6 +465,18 @@ form.contact-form textarea { min-height: 120px; resize: vertical; }
   75%, 87%  { transform: translate(255px, 187px); }
   100%      { transform: translate(255px, 55px); }
 }
+.audit-spark { opacity: 0; transform-origin: center; }
+@media (prefers-reduced-motion: no-preference) {
+  .audit-spark-1 { animation: audit-spark-pop 6s ease-in-out infinite; animation-delay: 0.6s; }
+  .audit-spark-2 { animation: audit-spark-pop 6s ease-in-out infinite; animation-delay: 2.1s; }
+  .audit-spark-3 { animation: audit-spark-pop 6s ease-in-out infinite; animation-delay: 3.6s; }
+  .audit-spark-4 { animation: audit-spark-pop 6s ease-in-out infinite; animation-delay: 5.1s; }
+}
+@keyframes audit-spark-pop {
+  0%, 90%, 100% { opacity: 0; transform: scale(0.4) rotate(0deg); }
+  8% { opacity: 1; transform: scale(1.2) rotate(20deg); }
+  18% { opacity: 0; transform: scale(0.8) rotate(40deg); }
+}
 
 /* The plan: a marker travels along the dashed route between waypoints */
 .plan-marker { transform: translate(50px, 190px); transform-origin: 0 0; }
@@ -464,6 +489,20 @@ form.contact-form textarea { min-height: 120px; resize: vertical; }
   85%, 95% { transform: translate(260px, 50px); }
   100%     { transform: translate(50px, 190px); }
 }
+.plan-path { stroke-dasharray: 100; stroke-dashoffset: 100; }
+@media (prefers-reduced-motion: no-preference) {
+  .plan-path { animation: plan-path-draw 5s ease-in-out infinite; }
+  .plan-flag { animation: plan-flag-bounce 1.4s ease-in-out infinite; animation-delay: 3.5s; }
+}
+@keyframes plan-path-draw {
+  0%, 10% { stroke-dashoffset: 100; }
+  85%, 100% { stroke-dashoffset: 0; }
+}
+.plan-flag { transform-origin: 260px 50px; }
+@keyframes plan-flag-bounce {
+  0%, 100% { transform: translate(260px, 50px) scale(1); }
+  50% { transform: translate(260px, 46px) scale(1.08); }
+}
 
 /* Execution & reporting: progress bar fills on a loop */
 .report-progress { transform-origin: left; }
@@ -473,6 +512,17 @@ form.contact-form textarea { min-height: 120px; resize: vertical; }
 @keyframes report-progress-fill {
   0%, 100% { transform: scaleX(0.05); }
   60% { transform: scaleX(1); }
+}
+.report-plane { transform: translate(48px, 174px) rotate(0deg); transform-origin: 0 0; }
+@media (prefers-reduced-motion: no-preference) {
+  .report-plane { animation: report-plane-fly 4s ease-in-out infinite; }
+}
+@keyframes report-plane-fly {
+  0%   { transform: translate(48px, 174px) rotate(0deg); opacity: 0; }
+  15%  { opacity: 1; }
+  70%  { transform: translate(210px, 100px) rotate(-25deg); opacity: 1; }
+  85%  { opacity: 0; }
+  100% { transform: translate(48px, 174px) rotate(0deg); opacity: 0; }
 }
 
 @media (max-width: 768px) {

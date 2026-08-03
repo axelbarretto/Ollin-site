@@ -141,6 +141,34 @@ nav.site-nav .nav-toggle {
   cursor: pointer;
 }
 
+.has-dropdown { position: relative; }
+nav.site-nav .dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 230px;
+  background-color: var(--color-stone);
+  border: 1px solid rgba(201,161,90,0.2);
+  border-radius: 8px;
+  padding: var(--space-1) 0;
+  list-style: none;
+  margin: var(--space-1) 0 0 0;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.45);
+  z-index: 20;
+}
+.has-dropdown:hover .dropdown,
+.has-dropdown:focus-within .dropdown { display: block; }
+.dropdown a {
+  display: block;
+  padding: 8px 16px;
+  white-space: nowrap;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.85rem;
+}
+.dropdown a:hover { background-color: rgba(201,161,90,0.12); }
+
 footer.site-footer {
   border-top: 1px solid rgba(201,161,90,0.15);
   padding: var(--space-3);
@@ -697,6 +725,15 @@ form.contact-form textarea { min-height: 120px; resize: vertical; }
   }
   nav.site-nav ul.open { display: flex; }
   nav.site-nav .nav-toggle { display: block; }
+  nav.site-nav .dropdown {
+    display: block;
+    position: static;
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0 0 0 var(--space-2);
+    margin: var(--space-1) 0 0 0;
+  }
 }
 
 /* Animated hero background — full-bleed effect behind a centered .container.

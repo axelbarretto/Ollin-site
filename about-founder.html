@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>About — Ollin</title>
+<title>About the Founder — Ollin</title>
 <meta name="description" content="Axel Barretto — UNH Digital Marketing grad, currently at SC Digital, running Ollin as an independent practice.">
-<meta property="og:title" content="About — Ollin">
+<meta property="og:title" content="About the Founder — Ollin">
 <meta property="og:description" content="UNH Digital Marketing grad, currently at SC Digital, running Ollin as an independent practice.">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Space+Mono:wght@400;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Space+Mono:wght@400;700&family=Lora:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -21,8 +21,22 @@
   <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
   <ul id="navLinks">
     <li><a href="index.html">Home</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="about.html" aria-current="page">About</a></li>
+    <li class="has-dropdown">
+      <a href="services.html">Services</a>
+      <ul class="dropdown">
+        <li><a href="services.html">Overview</a></li>
+        <li><a href="service-website.html">Website Optimization &amp; Creation</a></li>
+        <li><a href="service-seo.html">SEO + AEO/GEO</a></li>
+        <li><a href="service-ads.html">Google Ads</a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown">
+      <a href="about-founder.html" aria-current="page">About</a>
+      <ul class="dropdown">
+        <li><a href="about-founder.html" aria-current="page">About the Founder</a></li>
+        <li><a href="about-ollin.html">About Ollin</a></li>
+      </ul>
+    </li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>

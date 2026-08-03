@@ -70,16 +70,16 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   font-weight: 700;
   font-size: 0.85rem;
   letter-spacing: 0.05em;
-  background-color: #a8823f;
+  background-color: #6b5024;
   color: #000;
   padding: 14px 26px;
   border-radius: 2px;
   text-decoration: none;
-  border: 1px solid #a8823f;
+  border: 1px solid #6b5024;
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.2s ease;
 }
-.btn:hover { background-color: #8f6d34; transform: translateY(-1px); }
+.btn:hover { background-color: #59421e; transform: translateY(-1px); }
 
 .btn-outline {
   background-color: transparent;
@@ -446,34 +446,33 @@ form.contact-form textarea { min-height: 120px; resize: vertical; }
 }
 
 /* Animated hero background — full-bleed effect behind a centered .container.
-   Only applies when a bg-* modifier is present, so other pages' plain
-   `.hero.container` combined elements are unaffected. Ember uses ::before,
-   sun-sweep uses ::after, so both can run together on the same hero. */
-section.hero.bg-ember,
+   Only applies when bg-sun-sweep is present, so other pages' plain
+   `.hero.container` combined elements are unaffected. */
 section.hero.bg-sun-sweep {
   position: relative;
   overflow: hidden;
   padding: var(--space-5) 0;
 }
-section.hero.bg-ember > .container,
 section.hero.bg-sun-sweep > .container {
   position: relative;
   z-index: 2;
 }
 
-/* Decorative overlapping gold rings, static (no animation cost) */
+/* Decorative overlapping gold rings, static (no animation cost). Bleeds
+   off the top-right edge so it reads as a fragment of a larger circle. */
 .hero-lines {
   position: absolute;
   top: -10%;
-  right: -10%;
-  width: 60%;
-  height: 140%;
+  right: -3%;
+  width: 70%;
+  height: 160%;
   stroke: var(--color-gold);
-  stroke-width: 1;
+  stroke-width: 1.6;
   fill: none;
   opacity: 0.4;
   pointer-events: none;
   z-index: 1;
+  transform: rotate(-90deg) scaleY(-1);
 }
 
 /* Static (non-animated) fade so the section boundary below the hero is
@@ -488,40 +487,6 @@ section.hero.bg-sun-sweep > .container {
   background: linear-gradient(to bottom, transparent, var(--color-stone));
   pointer-events: none;
   z-index: 3;
-}
-
-/* Simplified for performance: transform + opacity only, no mix-blend-mode
-   or mask-image (both force extra per-frame compositor work). The seam
-   issue is solved by simply keeping both effects clear of the hero's
-   bottom edge, rather than fading them out with a mask each frame. */
-section.hero.bg-ember::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -10%;
-  right: -10%;
-  bottom: 35%;
-  background-image:
-    radial-gradient(3px 3px at 10% 90%, rgba(201,161,90,0.8), transparent),
-    radial-gradient(2px 2px at 25% 75%, rgba(201,161,90,0.6), transparent),
-    radial-gradient(4px 4px at 40% 95%, rgba(74,58,26,0.7), transparent),
-    radial-gradient(2px 2px at 55% 80%, rgba(201,161,90,0.5), transparent),
-    radial-gradient(3px 3px at 70% 92%, rgba(74,58,26,0.6), transparent),
-    radial-gradient(2px 2px at 85% 85%, rgba(201,161,90,0.7), transparent),
-    radial-gradient(3px 3px at 15% 60%, rgba(201,161,90,0.4), transparent),
-    radial-gradient(2px 2px at 90% 65%, rgba(74,58,26,0.5), transparent);
-  background-repeat: repeat;
-  background-size: 260px 500px;
-  pointer-events: none;
-  z-index: 1;
-  will-change: transform;
-}
-@media (prefers-reduced-motion: no-preference) {
-  section.hero.bg-ember::before { animation: ember-rise 16s linear infinite; }
-}
-@keyframes ember-rise {
-  from { transform: translate3d(0, 0, 0); }
-  to { transform: translate3d(0, -500px, 0); }
 }
 
 section.hero.bg-sun-sweep::after {

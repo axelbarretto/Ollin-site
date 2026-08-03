@@ -459,13 +459,16 @@ section.hero.bg-sun-sweep > .container {
 }
 
 /* Decorative overlapping gold rings, static (no animation cost). Bleeds
-   off the top-right edge so it reads as a fragment of a larger circle. */
+   off the top-right edge so it reads as a fragment of a larger circle.
+   aspect-ratio locks the box to the artwork's own proportions (matching
+   the 800x500 viewBox) so it's never a mismatched shape to stretch or
+   crop into — consistent round circles at every viewport width. */
 .hero-lines {
   position: absolute;
-  top: -10%;
-  right: 8%;
-  width: 85%;
-  height: 210%;
+  top: -15%;
+  right: 0%;
+  width: 75vw;
+  aspect-ratio: 800 / 500;
   stroke: var(--color-gold);
   stroke-width: 2.2;
   fill: none;

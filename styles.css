@@ -283,6 +283,33 @@ form.contact-form textarea { min-height: 120px; resize: vertical; }
 .process-step h3 { font-size: 1.1rem; }
 .process-step p { font-size: 0.95rem; color: rgba(236,231,217,0.85); }
 
+/* Small looping animations on the Services icons — transform/opacity only,
+   disabled entirely for reduced-motion users. */
+@media (prefers-reduced-motion: no-preference) {
+  .icon-cursor {
+    transform-origin: 17px 15px;
+    animation: cursor-tap 1.8s ease-in-out infinite;
+  }
+  .icon-signal {
+    animation: signal-pulse 1.6s ease-in-out infinite;
+  }
+  .icon-arrow {
+    animation: arrow-fly 1.8s ease-in-out infinite;
+  }
+}
+@keyframes cursor-tap {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(0.82); }
+}
+@keyframes signal-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+@keyframes arrow-fly {
+  0%, 100% { transform: translate(3px, -3px); opacity: 0.4; }
+  50% { transform: translate(0, 0); opacity: 1; }
+}
+
 .service-block { padding: var(--space-5) 0; }
 .service-block--shade { background-color: rgba(201,161,90,0.05); }
 .service-block .eyebrow { margin-bottom: var(--space-1); }

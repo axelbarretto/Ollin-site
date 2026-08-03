@@ -88,4 +88,50 @@ document.addEventListener('DOMContentLoaded', () => {
     render();
     resetTimer();
   }
+
+  const heroRotate = document.querySelector('.hero-rotate');
+  const heroRotateWord = document.getElementById('heroRotateWord');
+  if (heroRotate && heroRotateWord) {
+    let phrases = [];
+    try {
+      phrases = JSON.parse(heroRotate.getAttribute('data-phrases'));
+    } catch (e) {
+      phrases = [];
+    }
+    if (phrases.length) {
+      if (reducedMotion) {
+        heroRotateWord.textContent = phrases[0];
+      } else {
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let typing = true;
+
+        function tick() {
+          const current = phrases[phraseIndex];
+          if (typing) {
+            charIndex++;
+            heroRotateWord.textContent = current.slice(0, charIndex);
+            if (charIndex === current.length) {
+              typing = false;
+              window.setTimeout(tick, 1400);
+              return;
+            }
+            window.setTimeout(tick, 70);
+          } else {
+            charIndex--;
+            heroRotateWord.textContent = current.slice(0, charIndex);
+            if (charIndex === 0) {
+              typing = true;
+              phraseIndex = (phraseIndex + 1) % phrases.length;
+              window.setTimeout(tick, 400);
+              return;
+            }
+            window.setTimeout(tick, 35);
+          }
+        }
+
+        tick();
+      }
+    }
+  }
 });

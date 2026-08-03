@@ -328,6 +328,42 @@ form.contact-form textarea { min-height: 120px; resize: vertical; }
   align-items: center;
   justify-content: center;
 }
+
+/* Bigger animated "building a website" scene — fills the whole card
+   instead of a small centered icon. */
+.service-block-image--build { padding: var(--space-3); }
+.build-scene {
+  width: 100%;
+  height: 100%;
+  stroke: var(--color-gold);
+  fill: none;
+  stroke-width: 1.5;
+}
+.build-cursor { transform: translate(70px, 64px); transform-origin: 0 0; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .build-cursor { animation: build-cursor-move 7s ease-in-out infinite; }
+  .build-block-1 { animation: build-fade 4s ease-in-out infinite; }
+  .build-block-2 { animation: build-fade 4s ease-in-out infinite; animation-delay: 0.6s; }
+  .build-block-3 { animation: build-fade 4s ease-in-out infinite; animation-delay: 1.2s; }
+  .build-block-4 { animation: build-fade 4s ease-in-out infinite; animation-delay: 1.8s; }
+}
+@keyframes build-fade {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
+@keyframes build-cursor-move {
+  0%   { transform: translate(70px, 64px) scale(1); }
+  10%  { transform: translate(70px, 64px) scale(0.8); }
+  20%  { transform: translate(70px, 64px) scale(1); }
+  38%  { transform: translate(40px, 110px) scale(1); }
+  48%  { transform: translate(40px, 110px) scale(0.8); }
+  58%  { transform: translate(40px, 110px) scale(1); }
+  76%  { transform: translate(150px, 110px) scale(1); }
+  86%  { transform: translate(150px, 110px) scale(0.8); }
+  96%  { transform: translate(150px, 110px) scale(1); }
+  100% { transform: translate(70px, 64px) scale(1); }
+}
 @media (max-width: 768px) {
   .service-block-grid { grid-template-columns: 1fr; }
 }

@@ -463,9 +463,9 @@ section.hero.bg-sun-sweep > .container {
 .hero-lines {
   position: absolute;
   top: -10%;
-  right: -3%;
-  width: 70%;
-  height: 160%;
+  right: 8%;
+  width: 85%;
+  height: 210%;
   stroke: var(--color-gold);
   stroke-width: 2.2;
   fill: none;

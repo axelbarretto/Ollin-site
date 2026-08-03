@@ -465,9 +465,9 @@ section.hero.bg-sun-sweep > .container {
    crop into — consistent round circles at every viewport width. */
 .hero-lines {
   position: absolute;
-  top: -15%;
-  right: 0%;
-  width: 75vw;
+  top: -75%;
+  right: -35%;
+  width: 160vw;
   aspect-ratio: 800 / 500;
   stroke: var(--color-gold);
   stroke-width: 2.2;

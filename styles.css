@@ -146,14 +146,15 @@ nav.site-nav .dropdown {
   display: none;
   position: absolute;
   top: 100%;
-  left: 0;
+  right: 0;
+  left: auto;
   min-width: 230px;
   background-color: var(--color-stone);
   border: 1px solid rgba(201,161,90,0.2);
   border-radius: 8px;
   padding: var(--space-1) 0;
   list-style: none;
-  margin: var(--space-1) 0 0 0;
+  margin: 0;
   box-shadow: 0 12px 24px rgba(0,0,0,0.45);
   z-index: 20;
 }
@@ -184,12 +185,12 @@ footer.site-footer {
 footer.site-footer a { color: rgba(236,231,217,0.7); }
 
 section.hero { padding: var(--space-5) var(--space-3); }
-.hero-content { display: flex; flex-direction: column; justify-content: space-between; min-height: 78vh; }
+.hero-content { display: flex; flex-direction: column; }
 .hero.bg-sun-sweep h1 { font-size: clamp(2.8rem, 7vw, 4.6rem); }
 .hero-ctas { margin-top: var(--space-4); }
 section.section { padding: var(--space-4) var(--space-3); }
 
-.hero-rotate { font-size: 1.15rem; max-width: 65ch; }
+.hero-rotate { font-size: clamp(1.5rem, 3.4vw, 2.5rem); max-width: 65ch; }
 .hero-rotate-word { color: var(--color-gold); font-weight: 700; }
 .hero-rotate-cursor {
   display: inline-block;
@@ -298,6 +299,24 @@ form.contact-form textarea { min-height: 120px; resize: vertical; }
   animation: reveal-up 0.5s ease-out;
 }
 
+/* Side-by-side layout on wider viewports so the 320x240 scene fills its
+   column instead of leaving big empty margins next to a short, full-width
+   image strip. */
+@media (min-width: 769px) {
+  .process-grid.is-slider .process-step.active {
+    flex-direction: row;
+    align-items: stretch;
+  }
+  .process-grid.is-slider .process-image {
+    flex: 0 0 46%;
+    height: auto;
+  }
+  .process-grid.is-slider .process-content {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
 .slider-controls {
   display: flex;
   align-items: center;
@@ -396,6 +415,11 @@ form.contact-form textarea { min-height: 120px; resize: vertical; }
   border: 1px solid rgba(201,161,90,0.15);
   border-radius: 16px;
   padding: var(--space-3);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.service-block-textbox:hover {
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: 0 20px 36px rgba(0,0,0,0.45);
 }
 
 /* Bigger animated "building a website" scene — fills the whole card

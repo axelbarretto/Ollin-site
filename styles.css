@@ -272,14 +272,11 @@ form.contact-form textarea { min-height: 120px; resize: vertical; }
    anything else. */
 .process-image {
   height: 320px;
-  background-color: #f5f2ea;
+  background: linear-gradient(160deg, rgba(201,161,90,0.2), rgba(0,0,0,0.2));
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.process-image--build .build-scene { stroke: var(--color-ink); }
-.process-image--build .build-scene circle[fill="currentColor"],
-.process-image--build .build-scene path[fill="currentColor"] { fill: var(--color-ink); }
 .process-content {
   display: flex;
   flex-direction: column;

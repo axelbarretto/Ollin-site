@@ -914,4 +914,35 @@ section.hero.bg-sun-sweep::after {
   transition: transform 0.2s ease;
 }
 .faq-item[open] summary::after { transform: rotate(45deg); }
+
+/* Services page: "these work better together" bundling section.
+   .bundle-feature reuses the .problem-banner gradient treatment so the
+   all-three pairing reads as more prominent than the two-service cards
+   below it, without introducing a new color. */
+.bundle-feature {
+  background: linear-gradient(120deg, var(--color-ink), var(--color-oxblood));
+  border-radius: 16px;
+  padding: var(--space-4);
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+.bundle-feature h3 { font-size: 1.6rem; margin-bottom: var(--space-1); }
+.bundle-feature p { color: var(--color-cream); max-width: 70ch; margin: 0; font-size: 1.05rem; }
+
+.bundle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+.bundle-card {
+  border: 1px solid rgba(201,161,90,0.2);
+  border-radius: 12px;
+  padding: var(--space-3);
+}
+.bundle-card h3 { font-size: 1.1rem; margin-bottom: 8px; }
+.bundle-card p { font-size: 0.92rem; color: rgba(236,231,217,0.85); margin: 0; }
+
+@media (max-width: 768px) {
+  .bundle-grid { grid-template-columns: 1fr; }
+}
 .faq-item p { margin: var(--space-2) 0 0 0; color: rgba(236,231,217,0.85); max-width: 65ch; }

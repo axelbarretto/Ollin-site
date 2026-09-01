@@ -2095,3 +2095,8 @@ This entry documents an autonomous QA/cleanup pass run via `/goal` while Axel wa
 **Known environment quirk hit this session:** the local-file browser preview (`file:///.../freelance-site/...`) intermittently fails to resolve relative resources (styles.css renders as if unstyled, `link.href` resolves to a bare relative string instead of an absolute path) even in a brand-new tab — worse than the previously-documented stale-cache quirk, since cache-busting doesn't fix it. Workaround used successfully: verify against the live GitHub Pages URL instead (push first, wait ~1-2 min, verify live). Worth knowing if a future session sees "unstyled" local previews that a fresh tab doesn't fix.
 
 No items were blocked by ambiguity or design judgment calls — everything in scope this pass was objectively fixable or already correct.
+
+**Addendum, same day:** shipped after the autonomous pass, in a live follow-up session:
+- `services.html` rebuilt to match the home page's interactivity: the three service blocks now use the same animated SVG scenes + hover-pop treatment as Home, and the static 3-card "How it works" grid was replaced with the same 4-step animated slider used on Home.
+- Per-service blurbs on `services.html` rewritten (warmer, empathetic tone) so they're no longer verbatim duplicates of the Home page copy.
+- New "These can stand alone, or work together" section added — the site's first mention of combining services, with an all-three feature card plus three two-service pairing cards, each using bite-sized "Why this works" / "Best for" bullet points rather than paragraphs. Deliberately framed as informational, not pushing any single combination.

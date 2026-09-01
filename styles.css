@@ -927,7 +927,6 @@ section.hero.bg-sun-sweep::after {
   margin-bottom: var(--space-3);
 }
 .bundle-feature h3 { font-size: 1.6rem; margin-bottom: var(--space-1); }
-.bundle-feature p { color: var(--color-cream); max-width: 70ch; margin: 0; font-size: 1.05rem; }
 
 .bundle-grid {
   display: grid;
@@ -940,9 +939,24 @@ section.hero.bg-sun-sweep::after {
   padding: var(--space-3);
 }
 .bundle-card h3 { font-size: 1.1rem; margin-bottom: 8px; }
-.bundle-card p { font-size: 0.92rem; color: rgba(236,231,217,0.85); margin: 0; }
 
 @media (max-width: 768px) {
   .bundle-grid { grid-template-columns: 1fr; }
 }
+
+.bundle-label {
+  font-family: var(--font-label);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin: var(--space-2) 0 6px;
+}
+.bundle-feature .bundle-label:first-of-type,
+.bundle-card .bundle-label:first-of-type { margin-top: var(--space-1); }
+.bundle-points { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.bundle-points li { position: relative; padding-left: 16px; }
+.bundle-points li::before { content: '—'; position: absolute; left: 0; color: var(--color-gold); }
+.bundle-feature .bundle-points li { color: var(--color-cream); font-size: 1rem; }
+.bundle-card .bundle-points li { color: rgba(236,231,217,0.85); font-size: 0.9rem; }
 .faq-item p { margin: var(--space-2) 0 0 0; color: rgba(236,231,217,0.85); max-width: 65ch; }
